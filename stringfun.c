@@ -11,15 +11,18 @@ char * mystrchr( char *s, char c );
 int main(){
 	char s1[20] = "Hello";
 	char s2[20] = "";
+	printf("Before applying functions:\ns1 = %s, length = %d\ns2 = %s, length = %d\n\n",
+	s1, mystrlen(s1), s2, mystrlen(s2));
 	printf("Testing regular functions:\n");
 	mystrcpy(s2, s1);
-	printf("Copy s1 to s2: s2 = %s, length = %d\n", s2, mystrlen(s2));
+	printf("Copy s1 to s2: s2 = %s, length = %d\n\n", s2, mystrlen(s2));
 	mystrncat(s2, "mandy", 2);
-	printf("Cat \"man\" to s2: %s\n", s2);
+	printf("Testing strncat:\n");
+	printf("Cat \"man\" from \"mandy\" to s2: %s, length = %d\ns1 = %s, length = %d\n\n", s2, mystrlen(s2), s1, mystrlen(s1));
 	printf("Testing strcmp:\n");
 	printf("compare ab to abc: %d\n", mystrcmp("ab", "abc"));
 	printf("compare abc to ab: %d\n", mystrcmp("abc", "ab"));
-	printf("compare abc to abc: %d\n", mystrcmp("abc", "abc"));
+	printf("compare abc to abc: %d\n\n", mystrcmp("abc", "abc"));
 	printf("Testing strchr:\n");
 	printf("Looking for 1 in Hello123: %s\n", mystrchr("Hello123", 'l'));
 	printf("Looking for 0 in Hello123: %s\n", mystrchr("Hello123", '0'));
